@@ -1,1 +1,1 @@
-// Routes directory - add your route handlers here
+export { connectRoute } from './connect'
