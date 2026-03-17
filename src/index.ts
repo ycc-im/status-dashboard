@@ -1,6 +1,9 @@
 import { Elysia } from 'elysia'
+import { statusPostRoute, statusGetRoute } from './routes'
 
 const app = new Elysia()
+  .use(statusPostRoute)
+  .use(statusGetRoute)
   .get('/', () => 'Hello Elysia')
   .listen(3000)
 
