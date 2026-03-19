@@ -1,0 +1,94 @@
+{
+  "version": "1.0.0",
+  "timestamp": "2026-03-19T17:50:01.000Z",
+  "scanType": "full",
+  "project": {
+    "name": "status-dashboard",
+    "language": "TypeScript",
+    "framework": "Elysia",
+    "runtime": "Bun"
+  },
+  "stats": {
+    "totalFiles": 7,
+    "scannedFiles": 7,
+    "coverage": "100%",
+    "ignored": ["node_modules/**", ".env"]
+  },
+  "modules": [
+    {
+      "path": "src",
+      "type": "main",
+      "description": "Elysia Web 服务器主应用",
+      "entry": "src/index.ts",
+      "hasTests": false,
+      "hasConfig": true
+    },
+    {
+      "path": "src/db",
+      "type": "database",
+      "description": "SQLite 数据库连接与表结构",
+      "entry": "src/db/database.ts",
+      "hasTests": false,
+      "hasConfig": false
+    },
+    {
+      "path": "src/middleware",
+      "type": "middleware",
+      "description": "认证中间件 - AUTH_TOKEN 验证",
+      "entry": "src/middleware/auth.ts",
+      "hasTests": false,
+      "hasConfig": false
+    }
+  ],
+  "files": {
+    "src/index.ts": {
+      "type": "entry",
+      "description": "Elysia 应用主入口，监听 3000 端口"
+    },
+    "src/routes/index.ts": {
+      "type": "route",
+      "description": "路由目录，待实现"
+    },
+    "src/middleware/auth.ts": {
+      "type": "middleware",
+      "description": "Bearer Token 认证中间件"
+    },
+    "src/db/database.ts": {
+      "type": "database",
+      "description": "Bun SQLite 连接配置，使用 WAL 模式"
+    },
+    "src/db/schema.ts": {
+      "type": "database",
+      "description": "Status 数据表定义与接口类型"
+    },
+    "src/db/init.ts": {
+      "type": "database",
+      "description": "数据库初始化脚本，创建表和触发器"
+    },
+    "src/db/index.ts": {
+      "type": "database",
+      "description": "数据库目录入口"
+    }
+  },
+  "gaps": [
+    {
+      "type": "test",
+      "description": "缺少测试文件",
+      "severity": "medium",
+      "recommendation": "添加 Vitest 或 Bun test"
+    },
+    {
+      "type": "route",
+      "description": "src/routes/index.ts 为空",
+      "severity": "high",
+      "recommendation": "实现业务路由"
+    },
+    {
+      "type": "config",
+      "description": "缺少 lint/format 配置",
+      "severity": "low",
+      "recommendation": "添加 ESLint + Prettier"
+    }
+  ],
+  "truncated": false
+}
