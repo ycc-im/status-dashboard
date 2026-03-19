@@ -1,7 +1,7 @@
-import { Database } from 'bun:sqlite'
+import { Database } from 'bun:sqlite';
 
-const db = new Database('status.db')
+const db = new Database('status.db');
 
-db.run('PRAGMA journal_mode = WAL')
+db.run('PRAGMA journal_mode = WAL');
 
-export default db
+export default db;
