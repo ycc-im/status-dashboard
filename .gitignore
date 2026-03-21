@@ -1,3 +1,11 @@
 node_modules/
 .env
 .DS_Store
+
+# Bun
+bun.lockb
+
+# Local SQLite database files
+status.db
+status.db-shm
+status.db-wal
